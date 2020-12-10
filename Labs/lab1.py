@@ -6,12 +6,16 @@
 # task: run this code, play with it,
 # do you understand what happens?
 
-class FirstLab:
+# to use the queue FIFO
+
+
+
+class lab1:
     def __init__(self):
         print("hi, this is my first python class")
 
 
-fl = FirstLab()
+fl = lab1()
 
 # uncomment the following line, play with it
 # print("I can print anywhere I like")
