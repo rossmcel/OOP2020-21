@@ -103,7 +103,8 @@ characters = 'fake mews'
 for letter in characters:
     doc.insert(letter)
 
-doc.forward(4)
+#doc.forward(12)
+doc.backward(12)
 #doc.delete()
 doc.insert('n')
 doc.save()
