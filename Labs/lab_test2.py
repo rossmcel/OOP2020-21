@@ -77,7 +77,15 @@ class Document:
 
         Returns: none
         """
-        self.cursor -= steps
+        # determine if steps input is larger than character count
+        sumchar = sum(len(i) for i in self.characters)
+        if steps > sumchar:
+            minusindexes = steps % sumchar
+            currentstep = minusindexes
+        else:
+            currentstep = steps
+
+        self.cursor -= currentstep
 
 
 # initialising an object and using the class
@@ -87,7 +95,7 @@ characters = 'fake mews'
 for letter in characters:
     doc.insert(letter)
 
-doc.backward(4)
+doc.backward(10)
 doc.delete()
 doc.insert('n')
 doc.save()
