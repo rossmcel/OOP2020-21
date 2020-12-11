@@ -64,7 +64,15 @@ class Document:
 
         Returns: none.
         """
-        self.cursor += steps
+        # determine if steps input is larger than character count
+        sumchar = sum(len(i) for i in self.characters)
+        if steps > sumchar:
+            minusindexes = steps % sumchar
+            currentstep = minusindexes
+        else:
+            currentstep = steps
+
+        self.cursor += currentstep
 
     def backward(self, steps):
         """
@@ -95,7 +103,7 @@ characters = 'fake mews'
 for letter in characters:
     doc.insert(letter)
 
-doc.backward(10)
-doc.delete()
+doc.forward(4)
+#doc.delete()
 doc.insert('n')
 doc.save()
